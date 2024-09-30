@@ -58,6 +58,15 @@ struct Node *add(struct Node *head1, struct Node *head2) {
     return head->next; // we can't return head since it is pointing to the dummy node we created
 }
 
+struct Node *sub(struct Node *head1, struct Node *head2) {
+    struct Node *temp = head2;
+    while(temp != NULL) {
+        temp->coeff = -temp->coeff;
+        temp = temp->next;
+    }
+    // Just change the sign of coeffecient of list2 from '+' to '-' and '-' to '+' and perform addition operation
+    return add(head1, head2);
+}
 
 struct Node *create(struct Node *head) {
     struct Node *temp = NULL;
@@ -128,8 +137,12 @@ int main() {
     head1 = create(head1);
     head2 = create(head2);
     head = add(head1, head2);
+    
     print(head1);
     print(head2);
+    print(head);
+
+    head = sub(head1, head2);
     print(head);
     return 0;
 }
