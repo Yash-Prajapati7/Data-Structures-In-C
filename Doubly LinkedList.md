@@ -57,6 +57,7 @@ struct Node *insertAfter(struct Node *head, int ele, int val) {
 
 	temp->next->prev = nn;
 	nn->prev = temp;
+	nn->next = temp->next;
 	temp->next = nn;
 
 	return head;
@@ -83,7 +84,6 @@ int main()
 	scanf("%d %d", &val, &ele);
 	head = insertAfter(head, ele, val);
 	print(head);
-
 
 	return 0;
 }
