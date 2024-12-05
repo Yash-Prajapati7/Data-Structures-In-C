@@ -1,3 +1,5 @@
+## C
+```c
 #include <stdio.h>
 
 void print(int nums[], int n) {
@@ -38,3 +40,4 @@ int main() {
   insertionSort(nums, n);
   return 0;
 }
+```
