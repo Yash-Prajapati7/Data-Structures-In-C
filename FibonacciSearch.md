@@ -26,6 +26,7 @@ int fibSearch(int nums[], int n, int x) {
         int i = min(offset + fib(k - 2), n - 1);
         if (nums[i] < x) {
             offset = i;
+            k -= 1;
         }
         else if (nums[i] > x) {
             k -= 2;
